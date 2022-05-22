@@ -1,4 +1,6 @@
-﻿namespace CourierKata.Tests.Factory
+﻿using System;
+
+namespace CourierKata.Tests.Factory
 {
     public class ParcelFactoryTests
     {
@@ -67,6 +69,27 @@
 
             // Asset
             AssertParcelIsValid(sut, height, length, width, ParcelSizeType.XL);
+        }
+
+        [Theory]
+        [InlineData(0, 0, 0)]
+        [InlineData(1, 0, 0)]
+        [InlineData(0, 1, 0)]
+        [InlineData(0, 0, 1)]
+        [InlineData(1, 1, 0)]
+        [InlineData(0, 1, 1)]
+        [InlineData(1, 0, 1)]
+        [InlineData(-1, 0, 0)]
+        [InlineData(0, -1, 0)]
+        [InlineData(0, 0, -1)]
+        [InlineData(-1, -1, 0)]
+        [InlineData(0, -1, -1)]
+        [InlineData(-1, 0, -1)]
+        [InlineData(-1, -1, -1)]
+        public void Check_ParcelFactory_Createparcel_ThrowsException_OnZeroOrBelowValue(decimal length, decimal width, decimal height)
+        {
+            // Asset
+            _parcelFactory.Invoking(x => x.CreateParcel(height, length, width)).Should().Throw<ArgumentOutOfRangeException>();
         }
 
         // To reduce duplication all the test assertions can be done together in thid classs.
