@@ -8,9 +8,9 @@ namespace CourierKata.Tests.Services
     {
         private ParcelWeightCalculator _parcelWeightCalculatorTests;
 
-        public ParcelPriceCalculatorTests()
+        public ParcelWeightCalculatorTests()
         {
-            _parcelWeightCalculatorTests = new ParcelPriceCalculator();
+            _parcelWeightCalculatorTests = new ParcelWeightCalculator();
         }
 
         [Theory]

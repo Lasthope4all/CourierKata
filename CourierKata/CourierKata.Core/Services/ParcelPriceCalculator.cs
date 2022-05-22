@@ -15,5 +15,10 @@ namespace CourierKata.Core.Services
                 _ => throw new ArgumentOutOfRangeException(),
             };
         }
+
+        public decimal GetParcelPrice(Parcel parcel)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
