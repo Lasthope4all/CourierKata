@@ -1,6 +1,5 @@
 ﻿using CourierKata.Core.Constants;
 
-
 namespace CourierKata.Core.Services
 {
     public class ParcelPriceCalculator : IParcelPriceCalculator

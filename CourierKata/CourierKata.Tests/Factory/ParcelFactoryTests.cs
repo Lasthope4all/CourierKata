@@ -2,7 +2,7 @@
 
 namespace CourierKata.Tests.Factory
 {
-    public class ParcelFactoryTests
+    public class ParcelFactoryTests : BaseTest
     {
         private ParcelFactory _parcelFactory;
 

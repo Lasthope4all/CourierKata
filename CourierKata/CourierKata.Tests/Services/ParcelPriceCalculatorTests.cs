@@ -3,14 +3,8 @@ using System;
 
 namespace CourierKata.Tests.Services
 {
-    public class ParcelPriceCalculatorTests
+    public class ParcelPriceCalculatorTests : BaseTest
     {
-        public const decimal SmallSizePrice = 3;
-        public const decimal MediumSizePrice = 8;
-        public const decimal LargeSizePrice = 15;
-        public const decimal XLSizePrice = 25;
-        public const decimal HeavySizePrice = 50;
-
         private ParcelPriceCalculator _parcelPriceCalculator;
 
         public ParcelPriceCalculatorTests()
