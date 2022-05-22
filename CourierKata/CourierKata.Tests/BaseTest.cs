@@ -10,20 +10,32 @@ namespace CourierKata.Tests
         public const decimal LargeSizePrice = 15;
         public const decimal XLSizePrice = 25;
 
-        public const decimal GenericOrderPartialListPrice = SmallSizePrice + MediumSizePrice + LargeSizePrice + XLSizePrice;
+        public const decimal GenericOrderParcelListPrice = SmallSizePrice + MediumSizePrice + LargeSizePrice + XLSizePrice;
 
-        public const int GenericOrderPartialListCount = 4;
-        public const int GenericOrderPartialListCountSpeedy = 5;
+        public const int GenericOrderParcelListCount = 4;
+        public const int GenericOrderParcelListCountSpeedy = 5;
         public const decimal OrderPriceMultipliersSpeedy = 2;
         public const decimal SmallSizePriceSpeedy = SmallSizePrice * OrderPriceMultipliersSpeedy;
-        public const decimal GenericOrderPartialListPriceSpeedy = GenericOrderPartialListPrice * OrderPriceMultipliersSpeedy;
+        public const decimal GenericOrderParcelListPriceSpeedy = GenericOrderParcelListPrice * OrderPriceMultipliersSpeedy;
 
 
-        public static Parcel SmallPartial() => new Parcel(1, 1, 1, ParcelSizeType.Small);
-        public static Parcel MidPartial() => new Parcel(10, 10, 10, ParcelSizeType.Medium);
-        public static Parcel LargePartial() => new Parcel(50, 50, 50, ParcelSizeType.Large);
-        public static Parcel XLPartial() => new Parcel(100, 100, 100, ParcelSizeType.XL);
+        public static Parcel SmallParcel() => new Parcel(1, 1, 1, ParcelSizeType.Small);
+        public static Parcel MidParcel() => new Parcel(10, 10, 10, ParcelSizeType.Medium);
+        public static Parcel LargeParcel() => new Parcel(50, 50, 50, ParcelSizeType.Large);
+        public static Parcel XLParcel() => new Parcel(100, 100, 100, ParcelSizeType.XL);
 
-        public static List<Parcel> GenericOrderPartialList() => new List<Parcel> { SmallPartial(), MidPartial(), LargePartial(), XLPartial() };
+        public static LineItem SmallLineItem() => new LineItem(SmallSizePrice, "Small");
+        public static LineItem MidLineItem() => new LineItem(MediumSizePrice, "Medium");
+        public static LineItem LargeLineIteml() => new LineItem(LargeSizePrice, "Large");
+        public static LineItem XLineItem() => new LineItem(XLSizePrice, "XL");
+
+        public static LineItem SpeedyItem(decimal amount) => new LineItem(amount, "Speedy");
+
+        public static List<Parcel> GenericOrderParcelList() => new List<Parcel> { SmallParcel(), MidParcel(), LargeParcel(), XLParcel() };
+
+        public static List<LineItem> GenericOrderParcelListItems() => new List<LineItem> { SmallLineItem(), MidLineItem(), LargeLineIteml(), XLineItem() };
+
+        public static List<LineItem> GenericOrderParcelListItemsSpeedy() => new List<LineItem> { SmallLineItem(), MidLineItem(), LargeLineIteml(), XLineItem(), SpeedyItem(GenericOrderParcelListPrice) };
+
     }
 }
