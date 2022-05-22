@@ -5,11 +5,11 @@ namespace CourierKata.Tests.Factory
     public class ParcelFactoryTests
     {
         private ParcelFactory _parcelFactory;
+
         public ParcelFactoryTests()
         {
             _parcelFactory = new ParcelFactory();
         }
-
 
         // Small parcel: all dimensions< 10cm. Cost $3
         [Theory]
