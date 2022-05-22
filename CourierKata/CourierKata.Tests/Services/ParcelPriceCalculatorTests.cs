@@ -59,5 +59,17 @@ namespace CourierKata.Tests.Services
             // Asset
             _parcelPriceCalculator.Invoking(x => x.GetParcelPrice((ParcelSizeType)123654)).Should().Throw<ArgumentOutOfRangeException>();
         }
+
+
+        // TODO
+        //[Fact]
+        //public void Check_parcelPriceCalculator_CalculateLineItem_Overweight_Returns_Weight_Price()
+        //{
+        //    // Act
+        //    var sut = _parcelPriceCalculator.GetParcelPrice(ParcelSizeType.Medium);
+
+        //    // Asset
+        //    sut.Should().Be(MediumSizePrice);
+        //}
     }
 }

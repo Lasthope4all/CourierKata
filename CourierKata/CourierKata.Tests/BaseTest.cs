@@ -10,6 +10,12 @@ namespace CourierKata.Tests
         public const decimal LargeSizePrice = 15;
         public const decimal XLSizePrice = 25;
 
+        public const int SmallSizeWeightLimitInKG = 1;
+        public const int MediumSizeWeightLimitInKG = 3;
+        public const int LargeSizeWeightLimitInKG = 6;
+        public const int XLSizeWeightLimitInKG = 10;
+        public const int HeavySizeWeightLimitInKG = 50;
+
         public const decimal GenericOrderParcelListPrice = SmallSizePrice + MediumSizePrice + LargeSizePrice + XLSizePrice;
 
         public const int GenericOrderParcelListCount = 4;
@@ -36,6 +42,5 @@ namespace CourierKata.Tests
         public static List<LineItem> GenericOrderParcelListItems() => new List<LineItem> { SmallLineItem(), MidLineItem(), LargeLineIteml(), XLineItem() };
 
         public static List<LineItem> GenericOrderParcelListItemsSpeedy() => new List<LineItem> { SmallLineItem(), MidLineItem(), LargeLineIteml(), XLineItem(), SpeedyItem(GenericOrderParcelListPrice) };
-
     }
 }
