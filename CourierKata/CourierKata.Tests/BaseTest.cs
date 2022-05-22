@@ -11,8 +11,9 @@ namespace CourierKata.Tests
         public const decimal XLSizePrice = 25;
 
         public const decimal GenericOrderPartialListPrice = SmallSizePrice + MediumSizePrice + LargeSizePrice + XLSizePrice;
-        public const decimal GenericOrderPartialListCount = 4;
 
+        public const int GenericOrderPartialListCount = 4;
+        public const int GenericOrderPartialListCountSpeedy = 5;
         public const decimal OrderPriceMultipliersSpeedy = 2;
         public const decimal SmallSizePriceSpeedy = SmallSizePrice * OrderPriceMultipliersSpeedy;
         public const decimal GenericOrderPartialListPriceSpeedy = GenericOrderPartialListPrice * OrderPriceMultipliersSpeedy;

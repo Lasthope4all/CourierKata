@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace CourierKata.Tests.Models
 {
-    internal class OrderTests : BaseTest
+    public class OrderTests : BaseTest
     {
         [Fact]
         public void Check_Order_SmallParcel_Normal_ReturnsSmallPartialOrder()
@@ -17,9 +13,9 @@ namespace CourierKata.Tests.Models
             // Asset
             using (new AssertionScope())
             {
-                sut.Items.Should().HaveSaemCountAs(1);
+                sut.Items.Should().HaveCount(1);
                 sut.Total.Should().Be(SmallSizePrice);
-                sut.Type.Should().Total(Normal);
+                sut.Type.Should().Be(OrderType.Normal);
             }
         }
 
@@ -32,9 +28,9 @@ namespace CourierKata.Tests.Models
             // Asset
             using (new AssertionScope())
             {
-                sut.Items.Should().HaveSaemCountAs(GenericOrderPartialListPrice);
+                sut.Items.Should().HaveCount(GenericOrderPartialListCount);
                 sut.Total.Should().Be(GenericOrderPartialListPrice);
-                sut.Type.Should().Total(Normal);
+                sut.Type.Should().Be(OrderType.Normal);
             }
         }
 
@@ -42,14 +38,14 @@ namespace CourierKata.Tests.Models
         public void Check_Order_SmallParcel_Speedy_ReturnsSmallPartialOrder()
         {
             // Act
-            var sut = new Order(GenericOrderPartialList(), speedy);
+            var sut = new Order(new List<Parcel> { SmallPartial() }, OrderType.Speedy);
 
             // Asset
             using (new AssertionScope())
             {
-                sut.Items.Should().HaveSaemCountAs(GenericOrderPartialListPrice);
-                sut.Total.Should().Be(GenericOrderPartialListPriceSpeedy);
-                sut.Type.Should().Total(Speedy);
+                sut.Items.Should().HaveCount(2);
+                sut.Total.Should().Be(SmallSizePriceSpeedy);
+                sut.Type.Should().Be(OrderType.Speedy);
             }
         }
 
@@ -57,14 +53,14 @@ namespace CourierKata.Tests.Models
         public void Check_Order_SeveralParcels_Speedy_ReturnsSeveralParcelsOrder()
         {
             // Act
-            var sut = new Order(GenericOrderPartialList(), speedy);
+            var sut = new Order(GenericOrderPartialList(), OrderType.Speedy);
 
             // Asset
             using (new AssertionScope())
             {
-                sut.Items.Should().HaveSaemCountAs(GenericOrderPartialListPrice);
+                sut.Items.Should().HaveCount(GenericOrderPartialListCountSpeedy);
                 sut.Total.Should().Be(GenericOrderPartialListPriceSpeedy);
-                sut.Type.Should().Total(Speedy);
+                sut.Type.Should().Be(OrderType.Speedy);
             }
         }
     }
