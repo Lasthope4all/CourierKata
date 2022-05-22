@@ -21,4 +21,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CourierKata.Core\CourierKata.Core.csproj" />
+  </ItemGroup>
+
 </Project>

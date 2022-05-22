@@ -1,6 +1,6 @@
-﻿global using Courier.Core.Enums;
-global using Courier.Core.Models;
-global using FluentAssertions;
-global using System;
-global using System.Collections.Generic;
+﻿global using FluentAssertions;
 global using Xunit;
+global using CourierKata.Core.Enums;
+global using CourierKata.Core.Factory;
+global using CourierKata.Core.Models;
+global using FluentAssertions.Execution;
