@@ -19,20 +19,20 @@ namespace CourierKata.Tests.Services
         }
 
         [Fact]
-        public void Check_ParcelPriceCalculator_GetPrice_ReturnsSmallTypePrice()
+        public void Check_ParcelPriceCalculator_GetParcelPrice_ReturnsSmallTypePrice()
         {
             // Act
-            var sut = _parcelPriceCalculator.GetPrice(ParcelSizeType.Small);
+            var sut = _parcelPriceCalculator.GetParcelPrice(ParcelSizeType.Small);
             // Asset
             sut.Should().Be(SmallSizePrice);
         }
 
 
         [Fact]
-        public void Check_ParcelPriceCalculator_GetPrice_ReturnsMediumTypePrice()
+        public void Check_ParcelPriceCalculator_GetParcelPrice_ReturnsMediumTypePrice()
         {
             // Act
-            var sut = _parcelPriceCalculator.GetPrice(ParcelSizeType.Medium);
+            var sut = _parcelPriceCalculator.GetParcelPrice(ParcelSizeType.Medium);
 
             // Asset
             sut.Should().Be(MediumSizePrice);
@@ -40,30 +40,30 @@ namespace CourierKata.Tests.Services
 
 
         [Fact]
-        public void Check_ParcelPriceCalculator_GetPrice_ReturnsLargeTypePrice()
+        public void Check_ParcelPriceCalculator_GetParcelPrice_ReturnsLargeTypePrice()
         {
             // Act
-            var sut = _parcelPriceCalculator.GetPrice(ParcelSizeType.Large);
+            var sut = _parcelPriceCalculator.GetParcelPrice(ParcelSizeType.Large);
 
             // Asset
             sut.Should().Be(LargeSizePrice);
         }
 
         [Fact]
-        public void Check_ParcelPriceCalculator_GetPrice_ReturnsXLPrice()
+        public void Check_ParcelPriceCalculator_GetParcelPrice_ReturnsXLPrice()
         {
             // Act
-            var sut = _parcelPriceCalculator.GetPrice(ParcelSizeType.XL);
+            var sut = _parcelPriceCalculator.GetParcelPrice(ParcelSizeType.XL);
 
             // Asset
             sut.Should().Be(XLSizePrice);
         }
 
         [Fact]
-        public void Check_parcelPriceCalculator_GetPrice_ThrowsException_NotCorrectType()
+        public void Check_parcelPriceCalculator_GetParcelPrice_ThrowsException_NotCorrectType()
         {
             // Asset
-            _parcelPriceCalculator.Invoking(x => x.GetPrice((ParcelSizeType)123654)).Should().Throw<ArgumentOutOfRangeException>();
+            _parcelPriceCalculator.Invoking(x => x.GetParcelPrice((ParcelSizeType)123654)).Should().Throw<ArgumentOutOfRangeException>();
         }
     }
 }

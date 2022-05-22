@@ -1,16 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CourierKata.Core.Constants;
+
 
 namespace CourierKata.Core.Services
 {
     public class ParcelPriceCalculator : IParcelPriceCalculator
     {
-        public decimal GetPrice(ParcelSizeType parcelSizeType)
+        public decimal GetParcelPrice(ParcelSizeType parcelSizeType)
         {
-            throw new NotImplementedException();
+            return parcelSizeType switch
+            {
+                ParcelSizeType.Small => ParcelPricing.SmallSizePrice,
+                ParcelSizeType.Medium => ParcelPricing.MediumSizePrice,
+                ParcelSizeType.Large => ParcelPricing.LargeSizePrice,
+                ParcelSizeType.XL => ParcelPricing.XLSizePrice,
+                _ => throw new ArgumentOutOfRangeException(),
+            };
         }
     }
 }
